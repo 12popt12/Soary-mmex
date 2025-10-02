@@ -1,0 +1,5 @@
+{
+  "name": "Image Generation Bot",
+  "description": "A chatbot that generates images from text prompts using different artistic styles.",
+  "requestFramePermissions": []
+}
