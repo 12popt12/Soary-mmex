@@ -147,8 +147,10 @@ const App = () => {
 
     } catch (err) {
       console.error(err);
+      const errorMessage = 'حدث خطأ ما. يرجى المحاولة مرة أخرى.';
+      
       setMessages(prev => prev.map(msg =>
-        msg.id === botMessageId ? { ...msg, isLoading: false, error: 'حدث خطأ ما. يرجى المحاولة مرة أخرى.' } : msg
+        msg.id === botMessageId ? { ...msg, isLoading: false, error: errorMessage } : msg
       ));
     } finally {
       setIsLoading(false);
