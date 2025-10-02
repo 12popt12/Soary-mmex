@@ -195,6 +195,18 @@ const App = () => {
       </div>
 
       <form className="chat-input-form" onSubmit={handleSend}>
+        <button type="submit" className="send-btn" disabled={isLoading} aria-label="Send prompt">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>
+        </button>
+        <input
+          type="text"
+          className="chat-input"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="اكتب وصفًا للصورة..."
+          disabled={isLoading}
+          aria-label="Image description"
+        />
         <div className="style-picker-container" ref={stylePickerRef}>
           <button
             type="button"
@@ -223,18 +235,6 @@ const App = () => {
             ))}
           </div>
         </div>
-        <input
-          type="text"
-          className="chat-input"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="اكتب وصفًا للصورة..."
-          disabled={isLoading}
-          aria-label="Image description"
-        />
-        <button type="submit" className="send-btn" disabled={isLoading} aria-label="Send prompt">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>
-        </button>
       </form>
       
       <footer>
